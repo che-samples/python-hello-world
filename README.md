@@ -1,4 +1,4 @@
-# Sample ElasticSearch client
+# Sample ElasticSearch Python client
 
 #
 # Set the following environment variables.
