@@ -23,7 +23,7 @@ ELASTIC_PASSWORD = os.getenv("ELASTIC_PASSWORD")
 #
 ELASTIC_USER = 'elastic'
 PORT = '443'
-VERIFY_CERTS = True
+VERIFY_CERTS = False
 
 url = f'https://{ELASTIC_HOST}:{PORT}'
 logging.info("url: %s", url)
