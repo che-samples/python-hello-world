@@ -1,3 +1,19 @@
-# python-hello-world
+# Sample ElasticSearch client
 
-A simple program that displays “Hello, World!”. It's often used to illustrate the syntax of the language.
+#
+# Set the following environment variables.
+#
+
+export ELASTIC_HOST=
+export ELASTIC_USER=
+export ELASTIC_PASSWORD=
+
+```
+python -m venv venv
+pip install pip -Uq
+pip install -r requirements.txt
+```
+```
+python hello-elastic.py
+```
+
