@@ -13,19 +13,15 @@ from elasticsearch import Elasticsearch
 logging.basicConfig(level=logging.INFO)
 
 #
-# The following environment variables need to be set:
+# Environment variables and defaults.
 #
-ELASTIC_HOST = os.getenv("ELASTIC_HOST")
-ELASTIC_PASSWORD = os.getenv("ELASTIC_PASSWORD")
+ELASTIC_HOST = os.getenv("ELASTIC_HOST", "localhost")
+ELASTIC_PASSWORD = os.getenv("ELASTIC_PASSWORD", "elastic_password")
+ELASTIC_USER = os.getenv("ELASTIC_USER", "elastic")
+ELASTIC_PORT = os.getenv("ELASTIC_PORT", "443")
+VERIFY_CERTS = os.getenv("VERIFY_CERTS", False)
 
-#
-# Constants
-#
-ELASTIC_USER = 'elastic'
-PORT = '443'
-VERIFY_CERTS = False
-
-url = f'https://{ELASTIC_HOST}:{PORT}'
+url = f'https://{ELASTIC_HOST}:{ELASTIC_PORT}'
 logging.info("url: %s", url)
 
 es = Elasticsearch(url, verify_certs=VERIFY_CERTS, basic_auth=(ELASTIC_USER, ELASTIC_PASSWORD))
